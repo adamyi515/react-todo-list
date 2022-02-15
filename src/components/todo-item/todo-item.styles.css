@@ -3,4 +3,8 @@
   background-color: rgba(245, 139, 139, 0.6);
   padding: 30px;
   margin-top: 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

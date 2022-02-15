@@ -12,3 +12,9 @@ body {
     rgba(255, 194, 141, 1) 100%
   );
 }
+
+/*** Global Settings ***/
+.btn {
+  padding: 3px 10px;
+  border: none;
+}

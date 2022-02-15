@@ -1,0 +1,23 @@
+.todo-form {
+  margin-top: 40px;
+}
+
+.todo-form__form input {
+  padding: 15px;
+  width: 80%;
+}
+
+.todo-form__button {
+  background-color: inherit;
+  border: 1px solid white;
+  color: white;
+  padding: 15px;
+  width: 20%;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.todo-form__button:hover {
+  background-color: white;
+  color: rgba(242, 96, 96, 1);
+}
