@@ -1,0 +1,13 @@
+.todo-list {
+  width: 35%;
+  box-shadow: 3px 3px 2px black;
+  margin: 5% auto;
+  padding: 40px;
+  background-color: rgba(242, 96, 96, 1);
+  color: #fff;
+}
+
+.todo-list__border {
+  margin-top: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+}
