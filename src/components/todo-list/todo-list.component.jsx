@@ -14,7 +14,8 @@ const TodoList = () => {
     const addTodoItem = (text) => {
         const newTodoItem = {
             text,
-            id: uuidv4()
+            id: uuidv4(),
+            isChecked: false
         };
         setTodos([...todos, newTodoItem]);
     }
@@ -24,8 +25,21 @@ const TodoList = () => {
         setTodos(filterTodos);
     }
 
+    const checkTodoItem = (id) => {
+        const updatedTodos = todos.map(todoItem => {
+            if(todoItem.id === id){
+                return {
+                    ...todoItem,
+                    isChecked: !todoItem.isChecked
+                }
+            } else {
+                return todoItem;
+            }
+        });
+        setTodos(updatedTodos);
+    }
+
     const editTodoItem = (id, newText) => {
-        console.log('Id = ' + id + '\n' + 'new text = ' + newText);
         const updatedTodos = todos.map(todoItem => {
             if(todoItem.id === id){
                 return {
@@ -43,10 +57,11 @@ const TodoList = () => {
         <div className='todo-list'>
             <h1>Todo List</h1>
             <p>A simple react Todo List App</p>
+            <p>Items on the list: {todos.length} </p>
             <div className='todo-list__border'></div>
             {
                 todos.map(todoItem => <TodoItem key={todoItem.id} todoItem={todoItem} removeTodoItem={removeTodoItem} 
-                    editTodoItem={editTodoItem}/>)
+                    editTodoItem={editTodoItem} checkTodoItem={checkTodoItem}/>)
             }
             <TodoForm addTodoItem={addTodoItem}/>
         </div>

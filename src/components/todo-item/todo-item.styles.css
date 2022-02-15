@@ -13,7 +13,17 @@
   flex-basis: 75%;
 }
 
+.todo-item__description h4 {
+  cursor: pointer;
+}
+
 .todo-item__description input {
   padding: 10px;
   width: 100%;
+}
+
+.todo-item__checked {
+  text-decoration: line-through;
+  text-decoration-color: red;
+  text-decoration-thickness: 2px;
 }
