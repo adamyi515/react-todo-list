@@ -8,3 +8,12 @@
   justify-content: space-between;
   align-items: center;
 }
+
+.todo-item__description {
+  flex-basis: 75%;
+}
+
+.todo-item__description input {
+  padding: 10px;
+  width: 100%;
+}

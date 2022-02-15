@@ -20,7 +20,23 @@ const TodoList = () => {
     }
 
     const removeTodoItem = (id) => {
+        const filterTodos = todos.filter(todo => todo.id !== id);
+        setTodos(filterTodos);
+    }
 
+    const editTodoItem = (id, newText) => {
+        console.log('Id = ' + id + '\n' + 'new text = ' + newText);
+        const updatedTodos = todos.map(todoItem => {
+            if(todoItem.id === id){
+                return {
+                    ...todoItem,
+                    text: newText
+                }
+            } else {
+                return todoItem;
+            }
+        });
+        setTodos(updatedTodos);
     }
 
     return(
@@ -29,7 +45,8 @@ const TodoList = () => {
             <p>A simple react Todo List App</p>
             <div className='todo-list__border'></div>
             {
-                todos.map(todoItem => <TodoItem key={todoItem.id} todoItem={todoItem} />)
+                todos.map(todoItem => <TodoItem key={todoItem.id} todoItem={todoItem} removeTodoItem={removeTodoItem} 
+                    editTodoItem={editTodoItem}/>)
             }
             <TodoForm addTodoItem={addTodoItem}/>
         </div>
